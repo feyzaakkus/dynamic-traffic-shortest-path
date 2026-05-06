@@ -1,0 +1,23 @@
+{
+  "graph_id": "simple_test_1",
+  "description": "5 düğümlü basit test senaryosu",
+  "nodes": ["A", "B", "C", "D", "E"],
+  "edges": [
+    {
+      "u": "A",
+      "v": "B",
+      "base_time": 10.0,
+      "capacity": 50,
+      "alpha": 0.15,
+      "beta": 4.0
+    },
+    {
+      "u": "B",
+      "v": "C",
+      "base_time": 15.0,
+      "capacity": 30,
+      "alpha": 0.15,
+      "beta": 4.0
+    }
+  ]
+}
