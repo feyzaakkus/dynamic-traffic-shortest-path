@@ -15,13 +15,17 @@ class Graph:
         self.adjacency_list: Dict[str, List[Tuple[str, Edge]]] = {}
 
     def add_node(self, node: str):
-        # TODO:  (Sistem/Veri Lead) burayı dolduracak
-        pass
+        if node not in self.adjacency_list:
+            self.adjacency_list[node] = []
 
     def add_edge(self, edge: Edge):
-        # TODO:  (Sistem/Veri Lead) burayı dolduracak
-        pass
+        if edge.u not in self.adjacency_list:
+            self.add_node(edge.u)
+        if edge.v not in self.adjacency_list:
+            self.add_node(edge.v)
+
+        self.adjacency_list[edge.u].append((edge.v, edge))
+        self.adjacency_list[edge.v].append((edge.u, edge))  # çift yönlü
 
     def get_neighbors(self, node: str) -> List[Tuple[str, Edge]]:
-        # TODO:  (Sistem/Veri Lead) burayı dolduracak
-        pass
+        return self.adjacency_list.get(node, [])
